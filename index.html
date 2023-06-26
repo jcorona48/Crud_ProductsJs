@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Obteniendo datos</title>
+</head>
+
+<body>
+    <header>
+        <h3 class="title">Comunicación y seguridad</h3>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item"><a href="index.html" class="active">Productos</a></li>
+                <li class="navbar-item"><a href="Calificaciones.html">Calificaciones</a></li>
+                <li class="navbar-item button-container">
+                <button class="navbar-item" type="button" id="btnCerrarSesion" onclick="CerrarSesion()">Cerrar sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2 class="sub-title">CRUD de productos</h2>
+    <div class="container">
+        <div class="form-container">
+            <form action="" method="post">
+                <input class="input" type="number" placeholder="ID" id="ID" autocomplete="off" disabled>
+                <input class="input" type="text" placeholder="Nombre" id="Nombre" autocomplete="off">
+                <input class="input" type="number" placeholder="Precio" id="Precio" autocomplete="off">
+                <br> <br>
+                <div class="button-container">
+                    <button type="button" id="btnRegistrar" onclick="Guardar()">Guardar</button>
+                    <button type="button" id="btnImprimir" onclick="generarPDF2()">Imprimir PDF</button>
+                    <button type="button" id="btnExportar" onclick="generarExcel()">Exportar a Excel</button>
+                    <button type="button" id="btnExportar" onclick="abrirModal()">Abrir Modal</button>
+                </div>
+            </form>
+        </div>
+        <div class="table-filter-container">
+            <div class="filter-container">
+                <input type="text" id="txtfiltro" placeholder="Filtrar por..." />
+                <select id="cbxfiltro">
+                </select>
+            </div>
+            <div class="table-container">
+                <table id="tablet">
+                    <thead id="Theader">
+                        <th class="sortable" data-value="0">ID</th>
+                        <th class="sortable" data-value="1">Nombre</th>
+                        <th class="sortable" data-value="2">Precio Unitario</th>
+                        <th class="no-sort">Editar</th>
+                        <th class="no-sort">Eliminar</th>
+                    </thead>
+                    <tbody id="Tabla">
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-container">
+                <ul class="pagination" id="pagination">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Seleccionar Acción</h2>
+            <span class="close-modal" onclick="cerrarModal()">&times;</span>
+          </div>
+          <div class="modal-body">
+            <button onclick="accion1()">Acción 1</button>
+            <button onclick="accion2()">Acción 2</button>
+            <button onclick="accion3()">Acción 3</button>
+          </div>
+          <div class="modal-footer">
+            <button onclick="cerrarModal()">Cerrar</button>
+          </div>
+        </div>
+      </div>
+      
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="./Logic/AccesoDatos.js"></script>
+    <script src="./Logic/Modal.js"></script>
+    <script src="./Logic/Imprimir.js"></script>
+    <script src="./Logic/exportarExcel.js"></script>
+    <script src="./Logic/Filtros.js"></script>
+    <script src="./Logic/Ordenar.js"></script>
+    <script src="./Logic/Paginacion.js"></script>
+    <script src="./Logic/index.js"></script>
+</body>
+
+</html
